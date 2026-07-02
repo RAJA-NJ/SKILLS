@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Game</title>
+    </head>
+    <body>
+        <h1>Guessing Game</h1>
+        <input id="check" placeholder="Guess a Number">
+        <button onclick="logic()">Check</button>
+        <p id="result">Your are Right/Wrong</p>
+        <p id="score">Score: 10</p>
+
+        <style>
+            h1{
+                text-align: center;
+            }
+
+            input{
+                margin-left:35%;
+            }
+
+            p{
+                text-align: center;
+            }
+        </style>
+        
+        <script>
+
+            var tsc=10
+
+            function logic(){
+
+            var guess=document.getElementById("check")
+            var result=document.getElementById("result")
+            var score=document.getElementById("score")
+            var sysnum=Math.floor(Math.random()*10)+1
+
+                var enter=guess.value
+                if(enter==""){
+                    alert("Enter any Number")
+                }else if(sysnum==enter){
+                    result.textContent="Your Right"
+                    alert("You WON...")
+                    tsc=tsc+3
+                    score.textContent="Score: "+tsc
+                    guess.value=""
+                }else{
+                    tsc=tsc-1
+                    result.textContent="Your Wrong"
+                    score.textContent="Score: "+tsc
+                }
+            }
+        </script>
+    </body> 
+</html>

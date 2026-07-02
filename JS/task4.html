@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Select to display</title>
+    </head>
+    <body>
+        <h1 id="display"></h1>
+        <button id="b1" onclick="disp1()">God</button>
+        <button id="b2" onclick="disp2()">Jesus</button>
+        <button id="b3" onclick="disp3()">Saviour</button>
+
+        <script>
+            var display=document.getElementById("display")
+            var b1=document.getElementById("b1")
+            var b2=document.getElementById("b2")
+            var b3=document.getElementById("b3")
+            function disp1(){
+                display.textContent=b1.textContent
+            }
+            function disp2(){
+                display.textContent=b2.textContent
+            }
+            function disp3(){
+                display.textContent=b3.textContent
+            }
+        </script>
+    </body>
+</html>

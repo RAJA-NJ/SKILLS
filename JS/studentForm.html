@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Student Form</title>
+  </head>
+  <body>
+    <h2>Student Form</h2>
+    <form class="bio">
+      <table border="1">
+        <tr>
+          <td>Name: <input id="name" type="text" /></td>
+        </tr>
+        <tr>
+          <td>Age: <input id="age" /></td>
+        </tr>
+        <tr>
+          <td>
+            Gender: <input type="radio" name="gender" />male<input
+              type="radio"
+              name="gender"
+            />female
+          </td>
+        </tr>
+        <tr>
+          <td>
+            Course:
+            <select id="op" class="sel">
+              <option>None</option>
+              <option>JS</option>
+              <option>CSS</option>
+              <option>HTML</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Email: <input id="email" type="email" /></td>
+        </tr>
+        <tr>
+          <td>
+            <button class="save" onclick="saveb()" type="button">Save</button>
+          </td>
+        </tr>
+      </table>
+    </form>
+    <form class="disp">
+      <table border="1" id="Display">
+        <tr>
+          <td>Name</td>
+          <td>Age</td>
+          <td>Course</td>
+          <td>Gender</td>
+          <td>Email</td>
+          <td>Action</td>
+        </tr>
+      </table>
+    </form>
+    <style>
+      .de{
+        background-color: red;
+      }
+      
+      h2 {
+        text-align: center;
+      }
+
+      .bio {
+        margin-left: 35%;
+      }
+
+      .disp {
+        margin-left: 32%;
+        margin-top: 100px;
+      }
+
+      .save {
+        width: 220px;
+        background-color: lightgreen;
+      }
+
+      .sel {
+        width: 165px;
+      }
+    </style>
+    <script>
+      function saveb(){
+      var name=document.getElementById("name").value
+      var age=document.getElementById("age").value
+      var gender=document.querySelector('input[name="gender"]:checked').value;
+      var course=document.getElementById("op").value
+      var email=document.getElementById("email").value
+      var table=document.getElementById("Display")
+      newrow=table.insertRow(-1)
+      newrow.insertCell(0).innerHTML=name
+      newrow.insertCell(1).innerHTML=age
+      newrow.insertCell(2).innerHTML=course
+      newrow.insertCell(3).innerHTML=gender
+      newrow.insertCell(4).innerHTML=email
+      var action=newrow.insertCell(5);
+      action.innerHTML="<button class='de' onclick='del(this)'>Delete</button>"
+      }
+
+      function del(btn){
+        var newrow=btn.parentNode.parentNode;
+        newrow.remove();
+      }
+    </script>
+  </body>
+</html>

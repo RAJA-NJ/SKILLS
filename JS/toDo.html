@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+  <head>
+    <title>to Do's</title>
+  </head>
+  <body>
+    <h2 class="header">- -: To Do's :- -</h2>
+    <input id="task_getter" placeholder="enter your task here" />
+    <button class="btnad" onclick="addTask()">+</button>
+    <ul id="task_holder"></ul>
+    <script>
+      var task_getter = document.getElementById("task_getter");
+      var task_holder = document.getElementById("task_holder");
+
+      function addTask() {
+        if (task_getter.value.trim() == "") {
+          alert("No Task Entered!");
+          return;
+        } else {
+          var Task = document.createElement("li");
+          Task.innerHTML =
+            task_getter.value +
+            "<button class='btndel' onclick='deleteTask(event)'>-</button>";
+          task_holder.append(Task);
+          task_getter.value = "";
+        }
+      }
+      function deleteTask(event) {
+        event.target.parentElement.remove();
+      }
+    </script>
+    <style>
+      .btnad:hover{
+        cursor: pointer;
+        background-color: rgb(111, 247, 111);
+      }
+      .btndel:hover{
+        cursor: pointer;
+        background-color: rgb(243, 61, 67);
+      }
+      .header {
+        margin-left: 20px;
+      }
+      body {
+        transform: scale(1.4);
+        transform-origin: top left;
+        width: 100/1.2;
+      }
+    </style>
+  </body>
+</html>

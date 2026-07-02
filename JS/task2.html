@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rule Book</title>
+    </head>
+    <body>
+        <button onclick="rule1()">Next Rule</button>
+        <div id="r1"></div>
+        <script>
+            var s1=document.getElementById("r1");
+
+            function rule1(){
+                var s2=document.createElement("h1");
+                s2.textContent="You don't talk about Fight Club.";
+                s1.append(s2);
+            }
+        </script>
+    </body>
+</html>

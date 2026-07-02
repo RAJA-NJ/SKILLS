@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Task 4 opti</title>
+    </head>
+    <body>
+        <h1 id="disp">Display...</h1>
+        <button id="b1" onclick="d(event)">billa</button>
+        <button id="b2" onclick="d(event)">tyler durdern</button>
+        <button id="b3" onclick="d(event)">jack sparrow</button>
+
+        <script>
+            var disp=document.getElementById("disp")
+            function d(event){
+                disp.textContent=event.target.textContent
+            }
+        </script>
+    </body>
+</html>

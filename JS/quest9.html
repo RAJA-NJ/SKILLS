@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Event handler</title>
+    </head>
+    <body>
+        <h1 id="me">hello its me</h1>
+        <br>
+        <center id="b">
+        <button onclick="reply()">CLICK ME</button>
+        </center>
+        <script>
+            var result=document.getElementById("me")
+            console.log(result.textContent)
+            function reply(){
+            result.textContent="which personality are you"
+            }
+        </script>
+        <style>
+            h1{
+                color: aqua;
+                background-color: black;
+                display: inline-block;
+                width: 500px;
+                height: 300px;
+                text-align: center;
+                padding-top: 200px;
+            }
+        </style>
+    </body>
+</html>

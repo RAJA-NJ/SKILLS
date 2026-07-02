@@ -1,0 +1,20 @@
+<!--input displays on h1-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Task-1</title>
+  </head>
+  <body>
+    <input id="inputBox" onkeyup="logic()">
+    <h1 id="result">your search</h1>
+
+    <script>
+      var ip=document.getElementById("inputBox")
+      var op=document.getElementById("result")
+
+      function logic() {
+        op.textContent=ip.value
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Simple Calculator</title>
+  </head>
+  <body>
+    <input id="num1" />
+    <input id="num2" />
+    <button class="b" id="a" onclick="add()">add</button>
+    <p class="p1" id="result">Result</p>
+
+    <style>
+      input {
+        display: block;
+        margin-left: 50%;
+      }
+
+      .b {
+        margin-left: 50%;
+        margin-top: 10px;
+      }
+
+      .p1 {
+        text-align: center;
+        display: inline-block;
+        color: aquamarine;
+        background-color: black;
+      }
+    </style>
+
+    <script>
+      var num1 = document.getElementById("num1");
+      var num2 = document.getElementById("num2");
+
+      function add() {
+        var total = Number(num1.value) + Number(num2.value);
+        var response = document.getElementById("result");
+        response.textContent = total;
+      }
+    </script>
+  </body>
+</html>
